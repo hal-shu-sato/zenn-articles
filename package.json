@@ -8,5 +8,9 @@
   "private": true,
   "dependencies": {
     "zenn-cli": "^0.1.144"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0",
+    "prettier-plugin-md-nocjsp": "^1.5.1"
   }
 }
