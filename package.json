@@ -1,0 +1,12 @@
+{
+  "name": "zenn-articles",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/hal-shu-sato/zenn-articles.git",
+  "author": "ato lash <hal-shu-sato@users.noreply.github.com>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "zenn-cli": "^0.1.144"
+  }
+}
