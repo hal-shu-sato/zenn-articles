@@ -7,7 +7,11 @@ published: true
 published_at: 2023-07-14 22:00
 ---
 
+# 何が起きたの？
+
 Docker Composeを利用してMisskeyのサーバーを構築していたところ、ホスト側に建てたPostfix+Dovecotのサーバーとの通信につまずきました。
+
+# エラー内容
 
 Misskeyのコントロールパネル内のメールサーバーで、
 
@@ -28,6 +32,8 @@ Info: {"e":{"message":"connect ECONNREFUSED 127.0.0.1:587","code":"Error","id":"
 Date: yyyy-MM-ddTHH:mm:ss.fffZ
 ```
 
+# 理由
+
 どうしてだあああと調べていたところ、そもそもDockerコンテナは仮想環境らしく、別のネットワークを使っているため、ループバックしてもコンテナ自体に返ってしまうらしい。
 そこで調べたところ、この記事が。
 
@@ -35,6 +41,8 @@ https://qiita.com/ijufumi/items/badde64d530e6bade382
 
 ホストのIPを直接指定すればいいらしいけど、それは環境を移行したりIPが変わったりすると意味ないよなあ……。
 しかも、`host.docker.internal`がホストIPを指すのは、Docker Desktop限定の機能らしい……。
+
+# 解決
 
 もう少し調べたところ、今度はこの記事が。
 
@@ -53,4 +61,4 @@ extra_hosts:
 - ホスト：host.docker.internal
 - ポート：25（SMTP）や587（SUBMISSION）
 
-としたところ、無事につながり、メールが送信されましたとさ。
+としたところ、無事につながり、メールが送信されました。
