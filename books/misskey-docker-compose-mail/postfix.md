@@ -206,6 +206,25 @@ $ sudo newaliases
 $ sudo systemctl restart postfix.service
 ```
 
+# Misskeyの設定
+
+実際にMisskeyに設定を適用して、配信テストをします。
+今回はTCP587番（SUBMISSION）ポートを使います。
+
+コントロールパネルの設定>メールサーバーを開いて
+
+- メールアドレス：noreply@subdomain.domain.tld
+- ホスト：host.docker.internal
+- ポート：587
+- ユーザー名：（空欄）
+- パスワード：（空欄）
+
+を入力して保存した後、外部のアドレスに向けて配信テストをします。
+上手くいけばチェックが出て、送信はできると思います。
+
+Postfix側の動作は、ログが`/etc/log/mail.log`に出力されるので、エラーが起きていなければ送信されていると思います。
+受信はできていないか、迷惑メールフォルダに振り分けられているかもしれません。
+
 # SPF・DKIM・DMARCの設定
 
 それぞれ送信元ドメインを認証する設定です。
