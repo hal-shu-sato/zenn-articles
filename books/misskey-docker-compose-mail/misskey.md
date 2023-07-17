@@ -349,3 +349,9 @@ $ sudo ufw limit 22/tcp
 ```bash
 $ sudo ufw default deny
 ```
+
+ufwサービスを有効化して、再起動後も実行します。
+
+```bash
+$ sudo systemctl enable ufw
+```
