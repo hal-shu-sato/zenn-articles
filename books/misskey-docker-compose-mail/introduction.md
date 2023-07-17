@@ -6,6 +6,10 @@ title: "はじめに"
 基本的に以下のガイドに従います。
 https://misskey-hub.net/docs/install/docker.html
 
+:::message
+筆者がMisskeyサーバーを構築中なので、この本は執筆途中です。
+:::
+
 # 目標
 
 この本では、
