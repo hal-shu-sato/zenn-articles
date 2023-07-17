@@ -192,6 +192,13 @@ VRFYコマンド（ユーザーの存在確認）を無効化して、内部ユ�
 +disable_vrfy_command = yes
 ```
 
+TCP587番（SUBMISSION）ポートのリッスンを有効化します。
+
+```diff:/etc/postfix/master.cf
+-#submission inet n       -       y       -       -       smtpd
++submission inet n       -       y       -       -       smtpd
+```
+
 設定ファイルを保存した後、エイリアスデータベースを更新して、Postfixを再起動します。
 
 ```bash
@@ -349,6 +356,12 @@ OpenDKIMの処理を挟むようにします。
 $ sudo adduser postfix opendkim
 ```
 
+ここまで設定したら、OpenDKIMとPostfixを再起動します。
+
+```bash
+$ sudo systemctl restart opendkim.service postfix.service
+```
+
 ## DMARC (Domain-based Message Authentication, Reporting and Conformance)
 
 DMARCはSPFやDKIMの認証に失敗したメールをどうするかを指定します。
@@ -472,6 +485,12 @@ OpenDMARCの処理も挟むようにします。
 
 ```bash
 $ sudo adduser postfix opendmarc
+```
+
+ここまで設定したら、OpenDMARCとPostfixを再起動します。
+
+```bash
+$ sudo systemctl restart opendmarc.service postfix.service
 ```
 
 # 参考
