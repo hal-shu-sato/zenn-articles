@@ -337,11 +337,11 @@ To                         Action      From
 $ sudo ufw enable
 ```
 
-22番SSHポートを許可、または制限（30秒に6回接続した場合ブロック）をかけます。
+TCP22番（SSH）ポートを許可、または制限（30秒に6回接続した場合ブロック）をかけます。
 
 ```bash
-$ sudo ufw allow 22
-$ sudo ufw limit 22
+$ sudo ufw allow 22/tcp
+$ sudo ufw limit 22/tcp
 ```
 
 そして、デフォルトで通信を拒否します。
