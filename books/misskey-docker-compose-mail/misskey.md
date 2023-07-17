@@ -289,3 +289,63 @@ $ sudo docker compose up -d
 ```
 
 これでMisskeyが構築され、`http://localhost:3000`でアクセスできます！
+
+# 管理者アカウントの作成
+
+`http://localhost:3000`にアクセスすると、管理者アカウントの作成画面が表示されます。
+構築に成功したら、すぐに作っておきましょう。
+
+# ファイアウォールの有効化
+
+環境によっては、ファイアウォールが設定されておらず、外部から3000番ポートにアクセスできる状態にあることがあります。
+とりあえずですが、ファイアウォールを設定しておきましょう。
+SSH接続をしている場合は、慎重に設定してください。
+
+ufwを利用して、ファイアウォールを設定します。
+
+まず、現在の状態を確認します。
+以下は、Vultrのデフォルト設定と思われます。
+
+```bash
+$ sudo ufw status
+Status: active
+
+To                         Action      From
+--                         ------      ----
+22/tcp                     ALLOW       Anywhere
+22/tcp (v6)                ALLOW       Anywhere (v6)
+```
+
+詳細は以下のコマンドで確認します。
+
+```bash
+$ sudo ufw status verbose
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing), deny (routed)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+22/tcp                     ALLOW IN    Anywhere
+22/tcp (v6)                ALLOW IN    Anywhere (v6)
+```
+
+もしStatusがinactiveになっていれば、ファイアウォールを有効化します。
+
+```bash
+$ sudo ufw enable
+```
+
+22番SSHポートを許可、または制限（30秒に6回接続した場合ブロック）をかけます。
+
+```bash
+$ sudo ufw allow 22
+$ sudo ufw limit 22
+```
+
+そして、デフォルトで通信を拒否します。
+
+```bash
+$ sudo ufw default deny
+```
