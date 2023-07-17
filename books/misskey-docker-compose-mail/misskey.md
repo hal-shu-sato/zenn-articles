@@ -290,10 +290,13 @@ $ sudo docker compose up -d
 
 これでMisskeyが構築され、`http://localhost:3000`でアクセスできます！
 
-# 管理者アカウントの作成
+# 管理者アカウントの作成とMisskeyサーバーの設定
 
 `http://localhost:3000`にアクセスすると、管理者アカウントの作成画面が表示されます。
 構築に成功したら、すぐに作っておきましょう。
+
+また、最初にやっておくべき設定を設定しておきましょう。
+https://hide.ac/articles/Y504SIabp
 
 # ファイアウォールの有効化
 
