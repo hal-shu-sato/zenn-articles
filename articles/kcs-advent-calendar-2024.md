@@ -100,3 +100,6 @@ https://www.itmedia.co.jp/news/articles/2012/10/news091.html
 しかし、それでもいろいろとサービスが復旧してきて、さらに新機能も追加されてきたことで、どんどん活気が戻ってきてとても嬉しいです。
 
 また、ニコニコ動画だけ知っている人も多いかもしれませんが、ぜひ12/12は「ニコニコ建国記念日」ということもぜひ覚えておいてもらえると泣いて喜びます。
+
+[Computer Society Advent Calendar 2024](https://qiita.com/advent-calendar/2024/kcs)
+[11日目](https://qiita.com/3_Jugem/items/0f3364123d66550d3e82) ← 12日目 → [13日目](https://qiita.com/sutonchoko/items/9623359f081ea84626d8)
