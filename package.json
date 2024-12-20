@@ -7,9 +7,9 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
-    "zenn-cli": "^0.1.151"
+    "zenn-cli": "^0.1.158"
   },
   "devDependencies": {
-    "prettier": "^3.2.4"
+    "prettier": "^3.4.2"
   }
 }
