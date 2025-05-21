@@ -7,9 +7,10 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
-    "zenn-cli": "^0.1.158"
+    "zenn-cli": "^0.1.159"
   },
   "devDependencies": {
-    "prettier": "^3.4.2"
-  }
+    "prettier": "^3.5.3"
+  },
+  "packageManager": "yarn@1.22.22"
 }
